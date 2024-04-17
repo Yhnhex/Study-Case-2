@@ -1,0 +1,184 @@
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{subcaption}
+\usepackage{biblatex}
+\usepackage{indentfirst}
+\usepackage{chngcntr}
+\usepackage[a4paper]{geometry}
+\usepackage{fancyhdr}
+\usepackage[hidelinks]{hyperref}
+\usepackage{mathrsfs}
+\usepackage[toc,page]{appendix}
+\usepackage{csquotes}
+\usepackage[longtable]{multirow}
+\usepackage{longtable}
+\usepackage{booktabs} % Para tablas súper pro
+\usepackage{vcell}
+\usepackage{array}
+\usepackage{epsfig}
+\usepackage{pdfpages}
+\usepackage{amssymb}
+\usepackage{pmboxdraw}
+\usepackage{alltt}
+\usepackage{listings}
+\usepackage{listingsutf8}
+%\usepackage[spanish, es-tabla]{babel} % Para que ponga tabla en vez de cuadro
+\usepackage{xcolor}
+\usepackage{url}
+\usepackage{svg}
+\usepackage{xcolor,colortbl, pifont}
+\usepackage{booktabs}
+\usepackage{gensymb}
+\usepackage{dirtytalk}
+\usepackage{cancel} % Para tachar términos de ecuaciones
+\usepackage{siunitx}
+\usepackage{mathtools}
+\usepackage{empheq}
+\usepackage{titlesec}
+
+\addbibresource{bibliography.bib}
+
+
+\lstset{
+     literate=%
+         {á}{{\'a}}1
+         {í}{{\'i}}1
+         {é}{{\'e}}1
+         {ú}{{\'u}}1
+         {ó}{{\'o}}1
+         {Á}{{\'A}}1
+         {Í}{{\'I}}1
+         {É}{{\'E}}1
+         {Ú}{{\'U}}1
+         {Ó}{{\'O}}1}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+\lstset{style=mystyle}
+
+
+\numberwithin{equation}{section}
+\numberwithin{equation}{subsection}
+\counterwithin{figure}{section}
+\counterwithin{table}{section}
+\AtBeginDocument{\counterwithin{lstlisting}{section}}
+%
+% \renewcommand{\thesection}{Sección \Arabic{section}}
+
+% \renewcommand{\figureautorefname}{Figura}
+% \renewcommand{\tableautorefname}{Tabla}
+% \renewcommand{\equationautorefname}{Ecuación}
+
+\newcommand*\colourcheck[1]{%
+  \expandafter\newcommand\csname #1check\endcsname{\textcolor{#1}{\ding{52}}}%
+}
+\colourcheck{blue}
+\colourcheck{green}
+\colourcheck{red}
+
+
+\geometry{top=3.5cm, bottom=3.5cm, left=3cm, right=3cm}
+
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{MUSE: Integración y Ensayos}
+\rhead{\includegraphics[height=0.8cm]{Images Document/logomuse2.png}} % right logo
+\cfoot{\thepage}
+
+
+
+\begin{document}
+
+\begin{center}
+    \thispagestyle{empty}
+
+    \includegraphics[width=16.5cm]{Images Document/Logo_portada.png} \\
+
+    \vspace{1cm}
+
+    \Large{Universidad Politécnica de Madrid \\
+        \vspace{0.35cm}
+        Escuela Técnica Superior de Ingeniería Aeronáutica y del Espacio \\
+        \vspace{0.35cm}
+        Máster Universitario en Sistemas Espaciales \\}
+
+    \begin{center}
+        \vspace{2 cm}
+        {\bfseries\Huge Mejora de simulador y analisis de viabilidad de misiones espaciales dedicadas a Space Situational Awareness (SSA) \\}
+        \vspace{1 cm}
+        \textbf{Caso de estudio 2 \\}
+        \vspace{0.5cm}
+
+        {\large{\textbf{\today}}}
+
+        \vfill
+        {\Large Autora: \\
+            Inés Arauzo Andrés \\
+        }
+
+
+    \end{center}
+\end{center}
+
+\pagenumbering{gobble}
+\thispagestyle{empty}
+
+\newpage
+\pagenumbering{Roman} % Numeración romana hasta la primera sección
+
+
+\tableofcontents
+
+
+\setlength{\parskip}{4mm}
+\setlength{\parindent}{20pt}
+\setlength{\headheight}{16.07225pt}
+
+\newpage
+\pagenumbering{arabic}
+
+
+\input{Sections/Intro.tex}
+\newpage
+\input{Sections/EstruturaCode.tex}
+\newpage
+\input{Sections/Fotometria.tex}
+\newpage
+\input{Sections/Analysis.tex}
+
+
+\newpage
+\clearpage
+
+\printbibliography[title = {Documentos Aplicables}]
+\newpage
+\clearpage
+
+% \appendix
+% \input{Appendix}
+
+\end{document}
+
+
